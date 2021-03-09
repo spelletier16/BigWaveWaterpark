@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script>
+			function sortTable(p) {
+			var s=p;
+			var table, rows, switching, i, x, y, shouldSwitch;
+			table = document.getElementById("myTable");
+			switching = true;
+			while (switching) {
+				switching = false;
+				rows = table.getElementsByTagName("tr");
+				for (i = 1; i < (rows.length - 1); i++){
+					shouldSwitch = false;
+					x = rows[i].getElementsByTagName("td")[s];
+					y = rows[i+1].getElementsByTagName("td")[s];
+					if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()){
+						shouldSwitch = true;
+						break;		
+					}
+				}
+				if (shouldSwitch){
+					rows[i].parentNode.insertBefore(rows[i+1], rows[i]);
+					switching = true;
+				}
+			}
+		}
+		
+		function openNav() {
+			document.getElementById("mySidenav").style.width = "250px";
+		}
+		
+		function closeNav() {
+			document.getElementById("mySidenav").style.width = "0";
+		}
+				
+	</script>
+	
+	<title>Home</title>
+	
+</head>
+	<body>
+
+		<div class="transbox">
+			<div class="header1">
+					<h1>Lotus Yoga</h1>
+			</div>
+		</div>
+				
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="index.html">Home</a>
+			<a href="media/media.html">Media Page</a>
+			<a href="a">About</a>
+			<a href="a">Schedule</a>
+			<a href="a">Instructors</a>
+			<a href="a">Upcoming Events</a>
+			<a href="a">Fees and Policies</a>
+			<a href="a">Contact Us</a>
+			</div>
+			
+			
+		<div id="main">
+		<span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;</span>
+		<div class="table">
+			<table id="myTable">
+			<tr>
+			<th><button onclick="sortTable(0)">Sort by Type</button></th>
+			<th><button onclick="sortTable(1)">Sort by Length</button></th>
+			<th><button onclick="sortTable(2)">Sort by Instructor</button></th>
+			<th><button onclick="sortTable(3)">Sort by Class Day</button></th>
+			<th><button onclick="sortTable(4)">Sort by Level</button></th>			
+			</tr>
+			
+			<tr>
+			<td>Vinyasa</td>
+			<td>60 minutes</td>
+			<td>Shyla</td>
+			<td>Sunday</td>
+			<td>Intermediate</td>
+			</tr>
+			
+			<tr>
+			<td>Meditation</td>
+			<td>45 minutes</td>
+			<td>Kelly</td>
+			<td>Monday</td>
+			<td>All Levels</td>
+			</tr>
+			
+			<tr>
+			<td>Yin Yoga</td>
+			<td>60 minutes</td>
+			<td>Mary</td>
+			<td>Tuesday</td>
+			<td>All Levels</td>
+			</tr>
+			
+			<tr>
+			<td>Gentle Flow</td>
+			<td>60 minutes</td>
+			<td>Carolyn</td>
+			<td>Wednesday</td>
+			<td>All Levels</td>
+			</tr>
+			
+			<tr>
+			<td>Hatha Yoga</td>
+			<td>60 minutes</td>
+			<td>Rachel</td>
+			<td>Thursday</td>
+			<td>Intermediate</td>
+			</tr>
+			
+			<tr>
+			<td>Vinyasa</td>
+			<td>60 minutes</td>
+			<td>Laura</td>
+			<td>Friday</td>
+			<td>Beginner - Intermediate</td>
+			</tr>
+			
+			<tr>
+			<td>YOD</td>
+			<td>60 minutes</td>
+			<td>Brandy</td>
+			<td>Saturday</td>
+			<td>Intermediate</td>
+			</tr>
+		
+			<tr>
+			<td>Pilates</td>
+			<td>60 minutes</td>
+			<td>Katy</td>
+			<td>Saturday</td>
+			<td>Beginner - Intermediate</td>
+			</tr>
+			</table>
+		</div>
+		</div>
+	</body>
+</html>
+

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script>
+			function sortTable(p) {
+			var s=p;
+			var table, rows, switching, i, x, y, shouldSwitch;
+			table = document.getElementById("myTable");
+			switching = true;
+			while (switching) {
+				switching = false;
+				rows = table.getElementsByTagName("tr");
+				for (i = 1; i < (rows.length - 1); i++){
+					shouldSwitch = false;
+					x = rows[i].getElementsByTagName("td")[s];
+					y = rows[i+1].getElementsByTagName("td")[s];
+					if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()){
+						shouldSwitch = true;
+						break;		
+					}
+				}
+				if (shouldSwitch){
+					rows[i].parentNode.insertBefore(rows[i+1], rows[i]);
+					switching = true;
+				}
+			}
+		}
+	</script>
+	
+	<title>Hours</title>
+	
+</head>
+	<body>
+
+		<div class="transbox1">
+			<div class="header1">
+					<h1>Big Wave Waterpark</h1>
+			</div>
+		</div>
+				
+		<div class="sidenav">
+			<a target="_blank" href="images/bigwave.jpg">
+			<img class="wave" src="images/bigwave.jpg" alt="wave"></a>
+			<a href="index.html"><button class="btn"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home</button></a>
+			<a href="about.html"><button class="btn"><i class="fa fa-book" aria-hidden="true"></i>&nbsp;About</button></a>
+			<a href="hours.html"><button class="btn"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Hours</button></a>
+			<a href="upcomingevents.html"><button class="btn"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;Upcoming Events</button></a>
+			<a href="feesandpolicies.html"><button class="btn"><i class="fa fa-money" aria-hidden="true"></i>&nbsp;Fees and Policies</button></a>
+			<a href="contactus.html"><button class="btn"><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;Contact Us</button></a>
+			</div>
+			
+			
+		<div class="main">
+				<div class="containerc">
+				<div class="box1">
+					<div class="header3">
+						<h2>Hours</h2>
+					</div>
+				<div class="box3">
+					<div class="table2">
+					<table id="myTable">
+					<tr>
+					<th><button onclick="sortTable(0)">Day of the Week</button></th>
+					<th><button onclick="sortTable(1)">Opening Time</button></th>
+					<th><button onclick="sortTable(2)">Closing Time</button></th>		
+					</tr>
+
+					<tr>
+					<td>Sunday</td>
+					<td>10:00 AM</td>
+					<td>5:00 PM</td>
+					</tr>
+
+					<tr>
+					<td>Monday</td>
+					<td>CLOSED</td>
+					<td>CLOSED</td>
+					</tr>
+
+					<tr>
+					<td>Tuesday</td>
+					<td>10:00 AM</td>
+					<td>5:00 PM</td>
+					</tr>
+
+					<tr>
+					<td>Wednesday</td>
+					<td>10:00 AM</td>
+					<td>5:00 PM</td>
+					</tr>
+
+					<tr>
+					<td>Thursday</td>
+					<td>10:00 AM</td>
+					<td>5:00 PM</td>
+					</tr>
+
+					<tr>
+					<td>Friday</td>
+					<td>10:00 AM</td>
+					<td>5:00 PM</td>
+					</tr>
+
+					<tr>
+					<td>Saturday</td>
+					<td>10:00 AM</td>
+					<td>5:00 PM</td>
+					</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="thefooter">
+			<div class="transbox3">
+		<p>
+			Big Wave Waterpark<br>101 Big Wave Rd<br>Splashtown, PA<br>555-555-1212
+			</p>
+			</div>
+		</div>
+		</div>
+	</body>
+</html>
+
